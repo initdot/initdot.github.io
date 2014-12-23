@@ -1,0 +1,88 @@
+body, html {
+
+    color: #4D4D4D;
+
+}
+
+/* header */
+.header {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    overflow-x: none;
+    overflow-y: none;
+    
+    text-align: center;
+    vertical-align: baseline;
+    
+    border: thin solid #dedede;
+    box-shadow: 0 0 0.5em #dedede;
+    
+    background: #fff;
+    
+    z-index: 1001;
+
+}
+
+    #initdot {
+    
+        position: absolute;
+        top: 1.5em;
+        display: inline-block;
+        border: thin solid #dedede;
+        width: 0.5em;
+        height: 0.5em;
+        background: #dedede;
+        box-shadow: 0 0 0.1em #dedede;
+        border-radius: 3em;
+    
+    }
+
+/* the main containter occupying the center half */
+.container {
+
+    
+    position: absolute;
+    width: 50%;
+    height: auto;
+    left: 25%;
+    top: 10%;
+    
+    z-index: 101;
+    
+}
+
+.image{
+    text-align: center;
+}
+
+.slide {
+  
+    border: thin solid #fff;
+    box-shadow: 0 0 0.5em #dedede;
+    margin: 1em 0;
+    padding: 0.5em;
+    
+}
+
+    .slide:hover {
+        border: thin solid #dedede;
+        box-shadow: 0 0 1em #dedede;
+    }
+    
+    .slide a {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+    }
+    
+    .slide p {
+        line-height: 2em;
+    }
+
+
+
+
