@@ -1,0 +1,147 @@
+@dotgrey: #dedede;
+@textcolor: #4d4d4d;
+
+html, body {
+    color: @textcolor;
+}
+
+// --------------------------------------------------------------------
+// START: MIXINS
+// --------------------------------------------------------------------
+
+// 'border; mixin
+// draws a border; default border is "thin solid #dedede"
+.border (@bwidth: thin; @bstyle: solid; @bcolor: #dedede; @pos: all) when (@pos = all) {
+    border: @bwidth @bstyle @bcolor;
+}
+
+.border (@bwidth: thin; @bstyle: solid; @bcolor: #dedede; @pos) when not (@pos = all) {
+    border-@{pos}: @bwidth @bstyle @bcolor;
+}
+
+// 'box-shadow' mixin
+.box-shadow (@x: 0; @y: 0; @blur: 0.25em; @scolor: #dedede) {
+    -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+
+// 'set-dimensions' mixin; sets both width and height of same unit
+.set-dimensions (@width; @height; @unit: em;) when (isnumber(@width)) and (isnumber(@height)) {
+    // escape to remove the quotes
+    width: e("@{width}@{unit}");
+    height: e("@{height}@{unit}");
+}
+
+// ----------------------------------------------------------------------
+// END: MIXINS
+// ----------------------------------------------------------------------
+
+/* header */
+.header {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    
+    // set the dimensions 
+    .set-dimensions( 100, 10, "%" );
+    
+    overflow-x: none;
+    overflow-y: none;
+    
+    text-align: center;
+    vertical-align: baseline;
+    
+    // use the 'border' mixin
+    .border();
+    // use the 'box-shadow' mixin
+    .box-shadow();
+    
+    background: #fff;
+    z-index: 1001;
+  
+        #initdot {
+
+            position: absolute;
+            top: 1.5em;
+            display: inline-block;
+            
+            // use the 'border' mixin
+            .border();
+            // set width and height
+            .set-dimensions(0.35, 0.35);
+            
+            background: #dedede;
+            
+            // box-shadow: 0 0 0.1em #dedede;
+            .box-shadow(@blur: 0.1em);
+
+            border-radius: 3em;
+
+        }
+
+} 
+
+/* the main containter occupying the center half */
+.container {
+
+    
+    position: absolute;
+    width: 70%;
+    height: auto;
+    
+    top: 10%;
+    left: 15%;
+    
+    z-index: 101;
+    
+}
+
+.works {
+    
+    .border();
+    .box-shadow(@blur: 0.5em);
+    
+    margin: 1em 0;
+    padding: 0.5em;
+    text-align: center;
+    
+    height: auto;
+    
+        &:hover {
+            .box-shadow(@blur: 1em);
+        }
+        
+        & a {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+    
+}
+
+/* footer */
+.footer {
+
+    margin: 5em 0;
+    padding: 1em;
+    
+    border-top: thin solid #dedede;
+    .border(@pos: bottom);
+    
+    text-align: center;
+    
+        & a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        & span {
+            margin: 2em;
+            display: inline-block;
+            font-weight: bold;
+        }
+    
+}
+
