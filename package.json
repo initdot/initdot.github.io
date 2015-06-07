@@ -1,0 +1,25 @@
+{
+  "name": "initdot.github.io",
+  "version": "0.1.0",
+  "description": "Initdot website page",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/initdot/initdot.github.io.git"
+  },
+  "keywords": [
+    "initdot",
+    "palerdot"
+  ],
+  "author": "palerdot",
+  "bugs": {
+    "url": "https://github.com/initdot/initdot.github.io/issues"
+  },
+  "homepage": "https://github.com/initdot/initdot.github.io#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.0.1"
+  }
+}
